@@ -48,8 +48,9 @@ class OcrRegenerator:
                         time.sleep(self.delay_seconds)
                     self._check_for_ocr(line)
 
-    def _check_for_ocr(self, pid: str):
-        if self._validate_pid(pid.strip()):
+    def _check_for_ocr(self, pid: str) -> bool:
+        pid = pid.strip()
+        if self._validate_pid(pid):
             datastreams = self.client.list_datastreams(pid, profiles=True)
             ocr = None
             for ds in datastreams:
@@ -63,12 +64,14 @@ class OcrRegenerator:
                     result = self._regenerate_ocr(pid)
                     if result:
                         self.logger.info(f'Regenerated OCR for {pid}')
+                        return True
                     else:
                         self.logger.error(f'Failed to regenerate OCR for {pid}')
                 else:
                     self.logger.info(f'OCR for {pid} is up to date')
             else:
                 self.logger.info(f'No OCR datastream for {pid}')
+            return False
 
     def _regenerate_ocr(self, pid: str) -> bool:
         res = requests.get(f'{self.ocr_gen_url}/{pid}')
@@ -81,5 +84,10 @@ class OcrRegenerator:
 
     @staticmethod
     def _setup_logging() -> logging.Logger:
-        logging.basicConfig(filename="./ocrRegenerator.log", level=logging.INFO)
+        logging.basicConfig(
+            filename="./ocrRegenerator.log",
+            level=logging.INFO,
+            format='%(asctime)s %(levelname)s:%(message)s',
+            datefmt='%m/%d/%Y %I:%M:%S %p'
+        )
         return logging.getLogger()
