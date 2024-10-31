@@ -58,8 +58,10 @@ class OcrRegenerator:
                         self.logger.info(f'Regenerated OCR for {pid}')
                     else:
                         self.logger.error(f'Failed to regenerate OCR for {pid}')
+                else:
+                    self.logger.info(f'OCR for {pid} is up to date')
             else:
-                self.logger.debug(f'No OCR for {pid}')
+                self.logger.info(f'No OCR datastream for {pid}')
 
     def _regenerate_ocr(self, pid: str) -> bool:
         res = requests.get(f'{self.ocr_gen_url}/{pid}')
