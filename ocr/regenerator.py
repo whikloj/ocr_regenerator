@@ -19,6 +19,9 @@ class OcrRegenerator:
         self.logger = self._setup_logging()
         self.check_before = check_before
 
+    def set_logging_level(self, level: int):
+        self.logger.setLevel(level)
+
     def set_check_before(self, check_before: datetime):
         if check_before is not None and check_before < datetime.now():
             self.check_before = check_before
@@ -60,6 +63,7 @@ class OcrRegenerator:
 
     def _regenerate_ocr(self, pid: str) -> bool:
         res = requests.get(f'{self.ocr_gen_url}/{pid}')
+        self.logger.debug(f'Regenerate OCR response: {res.status_code}')
         return 200 <= res.status_code < 400
 
     @staticmethod

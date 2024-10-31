@@ -2,4 +2,4 @@ fedora:
   url: http://localhost:8080/fedora/
   username: fedoraAdmin
   password: fedoraAdmin
-ocr_gen_url: http://localhost:9111/islandora-1x-gatekeeper/process/pid/
+ocr_generator_url: http://localhost:9111/islandora-1x-gatekeeper/process/pid/
