@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objectDatastreams xmlns="http://www.fedora.info/definitions/1/0/access/" xmlns:apim="http://www.fedora.info/definitions/1/0/management/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.fedora.info/definitions/1/0/access/ http://localhost:8080/fedora/schema/listDatastreams.xsd" pid="uofm:1612084" baseURL="http://localhost:8080/fedora/" >
+    <datastreamProfile pid="uofm:1612084" dsID="RELS-EXT" >
+        <apim:dsLabel>Fedora Object to Object Relationship Metadata.</apim:dsLabel>
+        <apim:dsVersionID>RELS-EXT.1</apim:dsVersionID>
+        <apim:dsCreateDate>2016-12-23T21:21:30.099Z</apim:dsCreateDate>
+        <apim:dsState>A</apim:dsState>
+        <apim:dsMIME>application/rdf+xml</apim:dsMIME>
+        <apim:dsFormatURI>info:fedora/fedora-system:FedoraRELSExt-1.0</apim:dsFormatURI>
+        <apim:dsControlGroup>X</apim:dsControlGroup>
+        <apim:dsSize>1205</apim:dsSize>
+        <apim:dsVersionable>true</apim:dsVersionable>
+        <apim:dsInfoType></apim:dsInfoType>
+        <apim:dsLocation>uofm:1612084+RELS-EXT+RELS-EXT.1</apim:dsLocation>
+        <apim:dsLocationType></apim:dsLocationType>
+        <apim:dsChecksumType>DISABLED</apim:dsChecksumType>
+        <apim:dsChecksum>none</apim:dsChecksum>
+    </datastreamProfile>
+    <datastreamProfile pid="uofm:1612084" dsID="MODS" >
+        <apim:dsLabel>MODS Record</apim:dsLabel>
+        <apim:dsVersionID>MODS.2</apim:dsVersionID>
+        <apim:dsCreateDate>2021-06-29T16:03:30.510Z</apim:dsCreateDate>
+        <apim:dsState>A</apim:dsState>
+        <apim:dsMIME>text/xml</apim:dsMIME>
+        <apim:dsFormatURI></apim:dsFormatURI>
+        <apim:dsControlGroup>M</apim:dsControlGroup>
+        <apim:dsSize>1096</apim:dsSize>
+        <apim:dsVersionable>true</apim:dsVersionable>
+        <apim:dsInfoType></apim:dsInfoType>
+        <apim:dsLocation>uofm:1612084+MODS+MODS.2</apim:dsLocation>
+        <apim:dsLocationType>INTERNAL_ID</apim:dsLocationType>
+        <apim:dsChecksumType>DISABLED</apim:dsChecksumType>
+        <apim:dsChecksum>none</apim:dsChecksum>
+    </datastreamProfile>
+    <datastreamProfile pid="uofm:1612084" dsID="DC" >
+        <apim:dsLabel>DC Record</apim:dsLabel>
+        <apim:dsVersionID>DC.0</apim:dsVersionID>
+        <apim:dsCreateDate>2014-10-10T01:11:02.792Z</apim:dsCreateDate>
+        <apim:dsState>A</apim:dsState>
+        <apim:dsMIME>text/xml</apim:dsMIME>
+        <apim:dsFormatURI></apim:dsFormatURI>
+        <apim:dsControlGroup>X</apim:dsControlGroup>
+        <apim:dsSize>480</apim:dsSize>
+        <apim:dsVersionable>true</apim:dsVersionable>
+        <apim:dsInfoType></apim:dsInfoType>
+        <apim:dsLocation>uofm:1612084+DC+DC.0</apim:dsLocation>
+        <apim:dsLocationType>INTERNAL_ID</apim:dsLocationType>
+        <apim:dsChecksumType>DISABLED</apim:dsChecksumType>
+        <apim:dsChecksum>none</apim:dsChecksum>
+    </datastreamProfile>
+    <datastreamProfile pid="uofm:1612084" dsID="page" ><apim:dsLabel>page Datastream</apim:dsLabel>
+        <apim:dsVersionID>page.0</apim:dsVersionID>
+        <apim:dsCreateDate>2014-10-10T01:11:02.792Z</apim:dsCreateDate>
+        <apim:dsState>A</apim:dsState>
+        <apim:dsMIME>text/xml</apim:dsMIME>
+        <apim:dsFormatURI></apim:dsFormatURI>
+        <apim:dsControlGroup>M</apim:dsControlGroup>
+        <apim:dsSize>472861</apim:dsSize>
+        <apim:dsVersionable>true</apim:dsVersionable>
+        <apim:dsInfoType></apim:dsInfoType>
+        <apim:dsLocation>uofm:1612084+page+page.0</apim:dsLocation>
+        <apim:dsLocationType>INTERNAL_ID</apim:dsLocationType>
+        <apim:dsChecksumType>DISABLED</apim:dsChecksumType>
+        <apim:dsChecksum>none</apim:dsChecksum>
+    </datastreamProfile>
+    <datastreamProfile pid="uofm:1612084" dsID="OBJ" >
+        <apim:dsLabel>Newspaper page</apim:dsLabel>
+        <apim:dsVersionID>OBJ.0</apim:dsVersionID>
+        <apim:dsCreateDate>2014-10-10T01:11:02.792Z</apim:dsCreateDate>
+        <apim:dsState>A</apim:dsState>
+        <apim:dsMIME>image/tiff</apim:dsMIME>
+        <apim:dsFormatURI></apim:dsFormatURI>
+        <apim:dsControlGroup>M</apim:dsControlGroup>
+        <apim:dsSize>40759920</apim:dsSize>
+        <apim:dsVersionable>true</apim:dsVersionable>
+        <apim:dsInfoType></apim:dsInfoType>
+        <apim:dsLocation>uofm:1612084+OBJ+OBJ.0</apim:dsLocation>
+        <apim:dsLocationType>INTERNAL_ID</apim:dsLocationType>
+        <apim:dsChecksumType>DISABLED</apim:dsChecksumType>
+        <apim:dsChecksum>none</apim:dsChecksum>
+    </datastreamProfile>
+    <datastreamProfile pid="uofm:1612084" dsID="PDF" >
+        <apim:dsLabel>Newspaper page PDF</apim:dsLabel>
+        <apim:dsVersionID>PDF.0</apim:dsVersionID>
+        <apim:dsCreateDate>2014-10-10T01:11:02.792Z</apim:dsCreateDate>
+        <apim:dsState>A</apim:dsState>
+        <apim:dsMIME>application/pdf</apim:dsMIME>
+        <apim:dsFormatURI></apim:dsFormatURI>
+        <apim:dsControlGroup>M</apim:dsControlGroup>
+        <apim:dsSize>2228327</apim:dsSize>
+        <apim:dsVersionable>true</apim:dsVersionable>
+        <apim:dsInfoType></apim:dsInfoType>
+        <apim:dsLocation>uofm:1612084+PDF+PDF.0</apim:dsLocation>
+        <apim:dsLocationType>INTERNAL_ID</apim:dsLocationType>
+        <apim:dsChecksumType>DISABLED</apim:dsChecksumType>
+        <apim:dsChecksum>none</apim:dsChecksum>
+    </datastreamProfile>
+    <datastreamProfile pid="uofm:1612084" dsID="HOCR" >
+        <apim:dsLabel>HOCR Record</apim:dsLabel>
+        <apim:dsVersionID>HOCR.0</apim:dsVersionID>
+        <apim:dsCreateDate>2014-10-10T01:11:02.792Z</apim:dsCreateDate>
+        <apim:dsState>A</apim:dsState>
+        <apim:dsMIME>text/xml</apim:dsMIME>
+        <apim:dsFormatURI></apim:dsFormatURI>
+        <apim:dsControlGroup>M</apim:dsControlGroup>
+        <apim:dsSize>556285</apim:dsSize>
+        <apim:dsVersionable>true</apim:dsVersionable>
+        <apim:dsInfoType></apim:dsInfoType>
+        <apim:dsLocation>uofm:1612084+HOCR+HOCR.0</apim:dsLocation>
+        <apim:dsLocationType>INTERNAL_ID</apim:dsLocationType>
+        <apim:dsChecksumType>DISABLED</apim:dsChecksumType>
+        <apim:dsChecksum>none</apim:dsChecksum>
+    </datastreamProfile>
+    <datastreamProfile pid="uofm:1612084" dsID="OCR" >
+        <apim:dsLabel>OCR Record</apim:dsLabel>
+        <apim:dsVersionID>OCR.0</apim:dsVersionID>
+        <apim:dsCreateDate>2014-10-10T01:11:02.792Z</apim:dsCreateDate>
+        <apim:dsState>A</apim:dsState>
+        <apim:dsMIME>text/plain</apim:dsMIME>
+        <apim:dsFormatURI></apim:dsFormatURI>
+        <apim:dsControlGroup>M</apim:dsControlGroup>
+        <apim:dsSize>28444</apim:dsSize>
+        <apim:dsVersionable>true</apim:dsVersionable>
+        <apim:dsInfoType></apim:dsInfoType>
+        <apim:dsLocation>uofm:1612084+OCR+OCR.0</apim:dsLocation>
+        <apim:dsLocationType>INTERNAL_ID</apim:dsLocationType>
+        <apim:dsChecksumType>DISABLED</apim:dsChecksumType>
+        <apim:dsChecksum>none</apim:dsChecksum>
+    </datastreamProfile>
+    <datastreamProfile pid="uofm:1612084" dsID="HQ_JPG" >
+        <apim:dsLabel>High quality JPEG</apim:dsLabel>
+        <apim:dsVersionID>HQ_JPG.0</apim:dsVersionID>
+        <apim:dsCreateDate>2014-10-10T01:11:06.380Z</apim:dsCreateDate>
+        <apim:dsState>A</apim:dsState>
+        <apim:dsMIME>image/jpeg</apim:dsMIME>
+        <apim:dsFormatURI></apim:dsFormatURI>
+        <apim:dsControlGroup>M</apim:dsControlGroup>
+        <apim:dsSize>2490343</apim:dsSize>
+        <apim:dsVersionable>true</apim:dsVersionable>
+        <apim:dsInfoType></apim:dsInfoType>
+        <apim:dsLocation>uofm:1612084+HQ_JPG+HQ_JPG.0</apim:dsLocation>
+        <apim:dsLocationType>INTERNAL_ID</apim:dsLocationType>
+        <apim:dsChecksumType>DISABLED</apim:dsChecksumType>
+        <apim:dsChecksum>none</apim:dsChecksum>
+    </datastreamProfile>
+    <datastreamProfile pid="uofm:1612084" dsID="TN" >
+        <apim:dsLabel>Thumbnail</apim:dsLabel>
+        <apim:dsVersionID>TN.0</apim:dsVersionID>
+        <apim:dsCreateDate>2014-10-10T23:04:29.825Z</apim:dsCreateDate>
+        <apim:dsState>A</apim:dsState>
+        <apim:dsMIME>image/jpeg</apim:dsMIME>
+        <apim:dsFormatURI></apim:dsFormatURI>
+        <apim:dsControlGroup>M</apim:dsControlGroup>
+        <apim:dsSize>5344</apim:dsSize>
+        <apim:dsVersionable>true</apim:dsVersionable>
+        <apim:dsInfoType></apim:dsInfoType>
+        <apim:dsLocation>uofm:1612084+TN+TN.0</apim:dsLocation>
+        <apim:dsLocationType>INTERNAL_ID</apim:dsLocationType>
+        <apim:dsChecksumType>DISABLED</apim:dsChecksumType>
+        <apim:dsChecksum>none</apim:dsChecksum>
+    </datastreamProfile>
+    <datastreamProfile pid="uofm:1612084" dsID="JPG" >
+        <apim:dsLabel>Medium sized JPEG</apim:dsLabel>
+        <apim:dsVersionID>JPG.0</apim:dsVersionID>
+        <apim:dsCreateDate>2014-10-10T23:04:43.628Z</apim:dsCreateDate>
+        <apim:dsState>A</apim:dsState>
+        <apim:dsMIME>image/jpeg</apim:dsMIME>
+        <apim:dsFormatURI></apim:dsFormatURI>
+        <apim:dsControlGroup>M</apim:dsControlGroup>
+        <apim:dsSize>111727</apim:dsSize>
+        <apim:dsVersionable>true</apim:dsVersionable>
+        <apim:dsInfoType></apim:dsInfoType>
+        <apim:dsLocation>uofm:1612084+JPG+JPG.0</apim:dsLocation>
+        <apim:dsLocationType>INTERNAL_ID</apim:dsLocationType>
+        <apim:dsChecksumType>DISABLED</apim:dsChecksumType>
+        <apim:dsChecksum>none</apim:dsChecksum>
+    </datastreamProfile>
+    <datastreamProfile pid="uofm:1612084" dsID="JP2" >
+        <apim:dsLabel>JPEG 2000</apim:dsLabel>
+        <apim:dsVersionID>JP2.0</apim:dsVersionID>
+        <apim:dsCreateDate>2014-10-10T23:04:58.461Z</apim:dsCreateDate>
+        <apim:dsState>A</apim:dsState>
+        <apim:dsMIME>image/jp2</apim:dsMIME>
+        <apim:dsFormatURI></apim:dsFormatURI>
+        <apim:dsControlGroup>M</apim:dsControlGroup>
+        <apim:dsSize>3056300</apim:dsSize>
+        <apim:dsVersionable>true</apim:dsVersionable>
+        <apim:dsInfoType></apim:dsInfoType>
+        <apim:dsLocation>uofm:1612084+JP2+JP2.0</apim:dsLocation>
+        <apim:dsLocationType>INTERNAL_ID</apim:dsLocationType>
+        <apim:dsChecksumType>DISABLED</apim:dsChecksumType>
+        <apim:dsChecksum>none</apim:dsChecksum>
+    </datastreamProfile>
+    <datastreamProfile pid="uofm:1612084" dsID="RELS-INT" >
+        <apim:dsLabel>Fedora Relationship Metadata.</apim:dsLabel>
+        <apim:dsVersionID>RELS-INT.1</apim:dsVersionID>
+        <apim:dsCreateDate>2014-10-10T23:07:36.285Z</apim:dsCreateDate>
+        <apim:dsState>A</apim:dsState>
+        <apim:dsMIME>application/rdf+xml</apim:dsMIME>
+        <apim:dsFormatURI>info:fedora/fedora-system:FedoraRELSExt-1.0</apim:dsFormatURI>
+        <apim:dsControlGroup>X</apim:dsControlGroup>
+        <apim:dsSize>358</apim:dsSize>
+        <apim:dsVersionable>true</apim:dsVersionable>
+        <apim:dsInfoType></apim:dsInfoType>
+        <apim:dsLocation>uofm:1612084+RELS-INT+RELS-INT.1</apim:dsLocation>
+        <apim:dsLocationType>INTERNAL_ID</apim:dsLocationType>
+        <apim:dsChecksumType>DISABLED</apim:dsChecksumType>
+        <apim:dsChecksum>none</apim:dsChecksum>
+    </datastreamProfile>
+    <datastreamProfile pid="uofm:1612084" dsID="TECHMD" >
+        <apim:dsLabel>TECHMD</apim:dsLabel>
+        <apim:dsVersionID>TECHMD.0</apim:dsVersionID>
+        <apim:dsCreateDate>2014-10-10T23:08:08.865Z</apim:dsCreateDate>
+        <apim:dsState>A</apim:dsState>
+        <apim:dsMIME>text/xml</apim:dsMIME>
+        <apim:dsFormatURI></apim:dsFormatURI>
+        <apim:dsControlGroup>M</apim:dsControlGroup>
+        <apim:dsSize>6923</apim:dsSize>
+        <apim:dsVersionable>true</apim:dsVersionable>
+        <apim:dsInfoType></apim:dsInfoType>
+        <apim:dsLocation>uofm:1612084+TECHMD+TECHMD.0</apim:dsLocation>
+        <apim:dsLocationType>INTERNAL_ID</apim:dsLocationType>
+        <apim:dsChecksumType>DISABLED</apim:dsChecksumType>
+        <apim:dsChecksum>none</apim:dsChecksum>
+    </datastreamProfile>
+    <datastreamProfile pid="uofm:1612084" dsID="POLICY" >
+        <apim:dsLabel>XACML Policy Stream</apim:dsLabel>
+        <apim:dsVersionID>POLICY.0</apim:dsVersionID>
+        <apim:dsCreateDate>2016-12-23T21:21:30.165Z</apim:dsCreateDate>
+        <apim:dsState>A</apim:dsState>
+        <apim:dsMIME>application/xml</apim:dsMIME>
+        <apim:dsFormatURI></apim:dsFormatURI>
+        <apim:dsControlGroup>M</apim:dsControlGroup>
+        <apim:dsSize>12642</apim:dsSize>
+        <apim:dsVersionable>true</apim:dsVersionable>
+        <apim:dsInfoType></apim:dsInfoType>
+        <apim:dsLocation>uofm:1612084+POLICY+POLICY.0</apim:dsLocation>
+        <apim:dsLocationType>INTERNAL_ID</apim:dsLocationType>
+        <apim:dsChecksumType>DISABLED</apim:dsChecksumType>
+        <apim:dsChecksum>none</apim:dsChecksum>
+    </datastreamProfile>
+</objectDatastreams>

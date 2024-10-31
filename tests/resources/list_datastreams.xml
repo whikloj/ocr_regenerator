@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objectDatastreams  xmlns="http://www.fedora.info/definitions/1/0/access/" xmlns:xsd="http://www.w3.org/2001/XMLSchema"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xsi:schemaLocation="http://www.fedora.info/definitions/1/0/access/ http://www.fedora-commons.org/definitions/1/0/listDatastreams.xsd" pid="uofm:1612084" baseURL="http://localhost:8080/fedora/" >
+<datastream dsid="RELS-EXT" label="Fedora Object to Object Relationship Metadata." mimeType="application/rdf+xml" />
+<datastream dsid="MODS" label="MODS Record" mimeType="text/xml" />
+<datastream dsid="DC" label="DC Record" mimeType="text/xml" />
+<datastream dsid="page" label="page Datastream" mimeType="text/xml" />
+<datastream dsid="OBJ" label="Newspaper page" mimeType="image/tiff" />
+<datastream dsid="PDF" label="Newspaper page PDF" mimeType="application/pdf" />
+<datastream dsid="HOCR" label="HOCR Record" mimeType="text/xml" />
+<datastream dsid="OCR" label="OCR Record" mimeType="text/plain" />
+<datastream dsid="HQ_JPG" label="High quality JPEG" mimeType="image/jpeg" />
+<datastream dsid="TN" label="Thumbnail" mimeType="image/jpeg" />
+<datastream dsid="JPG" label="Medium sized JPEG" mimeType="image/jpeg" />
+<datastream dsid="JP2" label="JPEG 2000" mimeType="image/jp2" />
+<datastream dsid="RELS-INT" label="Fedora Relationship Metadata." mimeType="application/rdf+xml" />
+<datastream dsid="TECHMD" label="TECHMD" mimeType="text/xml" />
+<datastream dsid="POLICY" label="XACML Policy Stream" mimeType="application/xml" />
+</objectDatastreams>
