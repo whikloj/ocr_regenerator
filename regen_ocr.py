@@ -2,14 +2,9 @@
 
 import argparse
 from datetime import datetime
-import logging
-import os.path
-import re
-import requests
-from urllib.parse import urlparse
 import yaml
 
-from fedora.client import FedoraClient
+from ocr import OcrRegenerator
 
 
 def main():
@@ -21,7 +16,8 @@ def main():
     with open(args.config, 'r') as f:
         config = yaml.safe_load(f)
     check_before = datetime.strptime(args.date, '%Y-%m-%d')
-    check(args.pid_or_file, config, check_before)
+    regen = OcrRegenerator(config, check_before)
+    regen.check(args.pid_or_file)
 
 if __name__ == '__main__':
     main()
