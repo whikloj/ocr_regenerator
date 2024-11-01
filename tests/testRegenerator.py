@@ -32,28 +32,62 @@ class RegeneratorTest(unittest.TestCase):
                 'username': 'user',
                 'password': 'pass'
             },
-            'ocr_generator_url': 'http://localhost:8080/ocr',
+            'regenerator': {
+                'url': 'http://localhost:8080/ocr',
+            },
+            'queue_monitor': {
+                'host': 'localhost',
+                'username': 'user',
+                'password': 'pass',
+                'queue_name': 'queue'
+            }
         }
         regen = OcrRegenerator(config, datetime.now())
         self.assertIsNotNone(regen)
+        self.assertIsInstance(regen, OcrRegenerator)
 
-    def test_setup_fail_fedora(self):
-        config = {
-            'ocr_generator_url': 'http://localhost:8080/ocr',
-        }
-        with self.assertRaises(KeyError):
-            OcrRegenerator(config, datetime.now())
-
-    def test_setup_fail_ocr(self):
-        config = {
-            'fedora': {
-                'url': 'http://localhost:8080/fcrepo/',
-                'username': 'user',
-                'password': 'pass'
+    def test_setup_fail(self):
+        configs = [
+            {
+                'fedora': {
+                    'url': 'http://localhost:8080/fcrepo/',
+                    'username': 'user',
+                    'password': 'pass'
+                },
+                'queue_monitor': {
+                    'host': 'localhost',
+                    'username': 'user',
+                    'password': 'pass',
+                    'queue_name': 'queue'
+                }
             },
-        }
-        with self.assertRaises(KeyError):
-            OcrRegenerator(config, datetime.now())
+            {
+                'regenerator': {
+                    'url': 'http://localhost:8080/ocr',
+                },
+                'queue_monitor': {
+                    'host': 'localhost',
+                    'username': 'user',
+                    'password': 'pass',
+                    'queue_name': 'queue'
+                }
+            },
+            {
+                'fedora': {
+                    'url': 'http://localhost:8080/fcrepo/',
+                    'username': 'user',
+                    'password': 'pass'
+                },
+                'regenerator': {
+                    'url': 'http://localhost:8080/ocr',
+                },
+            }
+        ]
+
+        for config in configs:
+            with self.assertRaises(KeyError):
+                OcrRegenerator(config, datetime.now())
+
 
     @mock.patch('fedora.client.requests.get', side_effect=mocked_requests)
     @mock.patch('ocr.regenerator.requests.get', side_effect=mocked_requests)
@@ -65,20 +99,29 @@ class RegeneratorTest(unittest.TestCase):
                 'username': 'user',
                 'password': 'pass'
             },
-            'ocr_generator_url': 'http://localhost:8080/ocr',
+            'regenerator': {
+                'url': 'http://localhost:8080/ocr',
+            },
+            'queue_monitor': {
+                'host': 'localhost',
+                'username': 'user',
+                'password': 'pass',
+                'queue_name': 'queue'
+            }
         }
         today = datetime.now()
         regen = OcrRegenerator(config, today)
         regen.check('test:pid')
         self.assertIn(
-            mock.call('http://localhost:8080/fcrepo/objects/test:pid/datastreams?format=xml&profiles=true', auth=('user', 'pass'))
-            , mock_fedora.call_args_list
+            mock.call('http://localhost:8080/fcrepo/objects/test:pid/datastreams?format=xml&profiles=true', auth=('user', 'pass')),
+            mock_fedora.call_args_list
         )
         self.assertIn(
             mock.call('http://localhost:8080/ocr/test:pid'),
             mock_fedora.call_args_list
         )
         self.assertEqual(2, len(mock_fedora.call_args_list))
+        self.assertEqual(0, len(mock_regen.call_args_list))
 
     @mock.patch('fedora.client.requests.get', side_effect=mocked_requests)
     @mock.patch('ocr.regenerator.requests.get', side_effect=mocked_requests)
@@ -89,17 +132,30 @@ class RegeneratorTest(unittest.TestCase):
                 'username': 'user',
                 'password': 'pass'
             },
-            'ocr_generator_url': 'http://localhost:8080/ocr',
+            'regenerator': {
+                'url': 'http://localhost:8080/ocr',
+            },
+            'queue_monitor': {
+                'host': 'localhost',
+                'username': 'user',
+                'password': 'pass',
+                'queue_name': 'queue'
+            }
         }
         today = datetime.strptime('2010-01-01', '%Y-%m-%d')
         regen = OcrRegenerator(config, today)
         regen.check('test:pid')
         self.assertIn(
             mock.call('http://localhost:8080/fcrepo/objects/test:pid/datastreams?format=xml&profiles=true',
-                      auth=('user', 'pass'))
-            , mock_fedora.call_args_list
+                      auth=('user', 'pass')),
+            mock_fedora.call_args_list
+        )
+        self.assertNotIn(
+            mock.call('http://localhost:8080/ocr/test:pid'),
+            mock_fedora.call_args_list
         )
         self.assertEqual(1, len(mock_fedora.call_args_list))
+        self.assertEqual(0, len(mock_regen.call_args_list))
 
 if __name__ == "__main__":
     unittest.main()
