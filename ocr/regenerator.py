@@ -19,7 +19,6 @@ class OcrRegenerator:
         regen = config['regenerator']
         self.ocr_gen_url = regen['url'].strip().rstrip('/')
         self.batch_size = regen.get('batch_size', 10)
-        #self.max_queue_size = regen.get('max_queue_size', 100)
         self.delay_seconds = regen.get('delay_seconds', 30)
         urlparse(self.ocr_gen_url)
         self.logger = self._setup_logging()
@@ -53,10 +52,10 @@ class OcrRegenerator:
             with open(file_path, 'r') as f:
                 lines = f.readlines()
                 for i, line in enumerate(lines):
-                    if i % self.batch_size == 0 and i != 0:
+                    if i % self.batch_size == 0:
                         self.logger.debug(f'Checking queue size')
                         while self.queue_monitor.queue_size_too_large():
-                            self.logger.debug(f'Queue size is too large, waiting {self.delay_seconds} seconds')
+                            self.logger.info(f'Queue size is too large, waiting {self.delay_seconds} seconds')
                             time.sleep(self.delay_seconds)
                     self._check_for_ocr(line)
 
