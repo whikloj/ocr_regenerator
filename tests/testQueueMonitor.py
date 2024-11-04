@@ -14,6 +14,8 @@ def mock_get_queue_dequeue_count(*args, **kwargs):
 def mock_get_queue_size(*args, **kwargs):
     if args[0] == 'test_queue':
         return 5
+    elif args[0] == 'test_queue2':
+        return 10
 
 class QueueMonitorTestCase(unittest.TestCase):
 
@@ -45,15 +47,71 @@ class QueueMonitorTestCase(unittest.TestCase):
             'username': 'user',
             'password': 'pass',
             'host': 'localhost',
-            'queue_name': 'test_queue'
+            'queue_name': ['test_queue']
         }
         monitor = QueueMonitor(config)
         self.assertIsNotNone(monitor)
         self.assertIsInstance(monitor, QueueMonitor)
-        self.assertEqual(monitor.get_queue_size(), 5)
+        self.assertFalse(monitor.queue_size_too_large())
         monitor.close()
         self.assertIn(mock.call('test_queue'), mock_enqueue.call_args_list)
         self.assertEqual(1, len(mock_enqueue.call_args_list))
+
+    @mock.patch('local_activemq_api_client.client.ActiveMQClient.get_queue_size', side_effect=mock_get_queue_size)
+    def test_get_queue_size2(self, mock_enqueue):
+        config = {
+            'username': 'user',
+            'password': 'pass',
+            'host': 'localhost',
+            'max_queue_size': 5,
+            'queue_name': ['test_queue2']
+        }
+        monitor = QueueMonitor(config)
+        self.assertIsNotNone(monitor)
+        self.assertIsInstance(monitor, QueueMonitor)
+        self.assertTrue(monitor.queue_size_too_large())
+        monitor.close()
+        self.assertIn(mock.call('test_queue2'), mock_enqueue.call_args_list)
+        self.assertEqual(1, len(mock_enqueue.call_args_list))
+
+    @mock.patch('local_activemq_api_client.client.ActiveMQClient.get_queue_size', side_effect=mock_get_queue_size)
+    def test_get_queue_size3(self, mock_enqueue):
+        config = {
+            'username': 'user',
+            'password': 'pass',
+            'host': 'localhost',
+            'max_queue_size': 5,
+            'queue_name': ['test_queue', 'test_queue2']
+        }
+        monitor = QueueMonitor(config)
+        self.assertIsNotNone(monitor)
+        self.assertIsInstance(monitor, QueueMonitor)
+        self.assertTrue(monitor.queue_size_too_large())
+        monitor.close()
+        self.assertIn(mock.call('test_queue'), mock_enqueue.call_args_list)
+        self.assertIn(mock.call('test_queue2'), mock_enqueue.call_args_list)
+        self.assertEqual(2, len(mock_enqueue.call_args_list))
+
+    @mock.patch('local_activemq_api_client.client.ActiveMQClient.get_queue_size', side_effect=mock_get_queue_size)
+    def test_get_queue_size4(self, mock_enqueue):
+        config = {
+            'username': 'user',
+            'password': 'pass',
+            'host': 'localhost',
+            'max_queue_size': 11,
+            'queue_name': [
+                'test_queue',
+                'test_queue2'
+            ]
+        }
+        monitor = QueueMonitor(config)
+        self.assertIsNotNone(monitor)
+        self.assertIsInstance(monitor, QueueMonitor)
+        self.assertFalse(monitor.queue_size_too_large())
+        monitor.close()
+        self.assertIn(mock.call('test_queue'), mock_enqueue.call_args_list)
+        self.assertIn(mock.call('test_queue2'), mock_enqueue.call_args_list)
+        self.assertEqual(2, len(mock_enqueue.call_args_list))
 
     """
     def test_live(self):

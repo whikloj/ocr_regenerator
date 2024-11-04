@@ -24,7 +24,7 @@ class FedoraClient(object):
         return self.url + '/objects/' + pid
 
     def _resolve_datastream(self, pid, dsid):
-        return self.url + '/objects/' + pid + '/datastreams/' + dsid
+        return self._resolve_pid(pid) + '/datastreams/' + dsid
 
     def list_datastreams(self, pid, profiles=False):
         """
@@ -56,9 +56,9 @@ class FedoraClient(object):
             else:
                 data = root.findall('.//apia:datastream', self.namespaces)
                 for ds in data:
-                    dsid = ds.attrib.get('@dsid')
-                    label = ds.attrib.get('@label')
-                    mimetype = ds.attrib.get('@mimeType')
+                    dsid = ds.attrib.get('dsid')
+                    label = ds.attrib.get('label')
+                    mimetype = ds.attrib.get('mimeType')
                     datastreams.append(Datastream.create_from_list(dsid, label, mimetype))
 
         return datastreams

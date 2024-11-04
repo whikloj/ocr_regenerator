@@ -6,9 +6,10 @@ regenerator:
   url: http://localhost:9111/islandora-1x-gatekeeper/process/pid/
   batch_size: 10
   delay_seconds: 30
-  max_queue_size: 100
 queue_monitor:
   host: http://localhost:8161
   username: admin
   password: admin
-  queue_name: fedora
+  max_queue_size: 100
+  queue_name:
+    - fedora

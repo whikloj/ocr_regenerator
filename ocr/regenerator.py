@@ -19,13 +19,19 @@ class OcrRegenerator:
         regen = config['regenerator']
         self.ocr_gen_url = regen['url'].strip().rstrip('/')
         self.batch_size = regen.get('batch_size', 10)
-        self.max_queue_size = regen.get('max_queue_size', 100)
+        #self.max_queue_size = regen.get('max_queue_size', 100)
         self.delay_seconds = regen.get('delay_seconds', 30)
         urlparse(self.ocr_gen_url)
         self.logger = self._setup_logging()
         self.check_before = check_before
         queue_config = config['queue_monitor']
         self.queue_monitor = QueueMonitor(queue_config)
+
+    def __del__(self):
+        try:
+            self.queue_monitor.close()
+        except AttributeError:
+            pass
 
     def set_logging_level(self, level: int):
         self.logger.setLevel(level)
@@ -49,7 +55,7 @@ class OcrRegenerator:
                 for i, line in enumerate(lines):
                     if i % self.batch_size == 0 and i != 0:
                         self.logger.debug(f'Checking queue size')
-                        while self.queue_monitor.get_queue_size() > self.max_queue_size:
+                        while self.queue_monitor.queue_size_too_large():
                             self.logger.debug(f'Queue size is too large, waiting {self.delay_seconds} seconds')
                             time.sleep(self.delay_seconds)
                     self._check_for_ocr(line)
